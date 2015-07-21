@@ -1,0 +1,239 @@
+---- Minecraft Crash Report ----
+// Sorry :(
+
+Time: 7/21/15 6:37 PM
+Description: Unexpected error
+
+java.lang.IndexOutOfBoundsException
+	at java.nio.Buffer.checkIndex(Unknown Source)
+	at java.nio.DirectByteBuffer.get(Unknown Source)
+	at org.lwjgl.input.Keyboard.isKeyDown(Keyboard.java:407)
+	at mcp.mobius.waila.overlay.WailaTickHandler.tickClient(WailaTickHandler.java:62)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler_721_WailaTickHandler_tickClient_ClientTickEvent.invoke(.dynamic)
+	at cpw.mods.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:54)
+	at cpw.mods.fml.common.eventhandler.EventBus.post(EventBus.java:138)
+	at cpw.mods.fml.common.FMLCommonHandler.onPreClientTick(FMLCommonHandler.java:325)
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1575)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:961)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:887)
+	at net.minecraft.client.main.Main.main(SourceFile:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_45, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1036122816 bytes (988 MB) / 2338848768 bytes (2230 MB) up to 4056416256 bytes (3868 MB)
+	JVM Flags: 3 total; -Xms256M -Xmx4352M -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.113.1384 Minecraft Forge 10.13.3.1384 169 mods loaded, 169 mods active
+	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	FML{7.10.113.1384} [Forge Mod Loader] (forge-1.7.10-10.13.3.1384-1.7.10-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Forge{10.13.3.1384} [Minecraft Forge] (forge-1.7.10-10.13.3.1384-1.7.10-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	appliedenergistics2-core{rv2-beta-28} [AppliedEnergistics2 Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	CodeChickenCore{1.0.5.37} [CodeChicken Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ImmibisMicroblocks{59.0.5} [Immibis's Microblocks] (immibis-microblocks-59.0.5.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	InfiniBows{1.3.0 build 20} [InfiniBows] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MobiusCore{1.2.5} [MobiusCore] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NotEnoughItems{1.0.4.95} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.4.95-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenComputers|Core{1.0.0} [OpenComputers (Core)] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenEye{0.6} [OpenEye] (OpenEye-0.6-1.7.10-snapshot-145.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThaumicTinkerer-preloader{0.1} [Thaumic Tinkerer Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenModsCore{0.7.1} [OpenModsCore] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	<CoFH ASM>{000} [CoFH ASM] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	debug{1.0} [debug] (denseores-1.6.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	IC2{2.2.717-experimental} [IndustrialCraft 2] (industrialcraft-2-2.2.717-experimental.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ImmibisCore{59.0.8} [Immibis Core] (immibis-core-59.0.8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	AdvancedRepulsionSystems{59.0.2} [Advanced Repulsion Systems] (adv-repulsion-systems-59.0.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	AdvancedSolarPanel{1.7.10-3.5.1} [Advanced Solar Panels] (AdvancedSolarPanel-1.7.10-3.5.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	AppleCore{1.1.0} [AppleCore] (AppleCore-mc1.7.10-1.1.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	appliedenergistics2{rv2-beta-28} [Applied Energistics 2] (appliedenergistics2-rv2-beta-28.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	bspkrsCore{6.15} [bspkrsCore] ([1.7.10]bspkrsCore-universal-6.15.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ArmorStatusHUD{1.28} [ArmorStatusHUD] (ArmorStatusHUD-client-1.28.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	CoFHCore{1.7.10R3.0.2} [CoFH Core] (CoFHCore-[1.7.10]3.0.2-262.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	asielib{0.3.13} [asielib] (AsieLib-1.7.10-0.3.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded{1.7.10R2.8.0} [MineFactory Reloaded] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft-1.7.10-4.2.3.5.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatThaumcraft{1.7.10R2.8.0} [MFR Compat: Thaumcraft] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Waila{1.5.10} [Waila] (Waila-1.5.10_1.7.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Automagy{0.22.2} [Automagy] (Automagy-1.7.10-0.22.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BiblioCraft{1.10.3} [BiblioCraft] (BiblioCraft[v1.10.3][MC1.7.10].jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThermalFoundation{1.7.10R1.0.0} [Thermal Foundation] (ThermalFoundation-[1.7.10]1.0.0-81.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThermalExpansion{1.7.10R4.0.1} [Thermal Expansion] (ThermalExpansion-[1.7.10]4.0.1-182.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BigReactors{0.4.3A} [Big Reactors] (BigReactors-0.4.3A.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Mantle{1.7.10-0.3.2.jenkins187} [Mantle] (Mantle-1.7.10-0.3.2.jenkins187.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Natura{2.2.0} [Natura] (natura-1.7.10-98.6a6cca1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BiomesOPlenty{2.1.0} [Biomes O' Plenty] (BiomesOPlenty-1.7.10-2.1.0.1237-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Core{6.4.13} [BuildCraft] (buildcraft-6.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Forestry{3.5.4.13} [Forestry for Minecraft] (forestry_1.7.10-3.5.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BinnieCore{2.0-pre8} [Binnie Core] (binnie-mods-2.0-pre8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Botany{2.0-pre8} [Botany] (binnie-mods-2.0-pre8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ExtraBees{2.0-pre8} [Extra Bees] (binnie-mods-2.0-pre8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ExtraTrees{2.0-pre8} [Extra Trees] (binnie-mods-2.0-pre8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Genetics{2.0-pre8} [Genetics] (binnie-mods-2.0-pre8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	AWWayofTime{v1.3.2} [Blood Magic: Alchemical Wizardry] (BloodMagic-1.7.10-1.3.2-1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Botania{r1.6-183} [Botania] (Botania r1.6-183.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Transport{6.4.13} [BC Transport] (buildcraft-6.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Silicon{6.4.13} [BC Silicon] (buildcraft-6.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Builders{6.4.13} [BC Builders] (buildcraft-6.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Energy{6.4.13} [BC Energy] (buildcraft-6.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Factory{6.4.13} [BC Factory] (buildcraft-6.4.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Compat{6.4.0} [BuildCraft Compat] (buildcraft-compat-6.4.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	CarpentersBlocks{3.3.6} [Carpenter's Blocks] (Carpenter's Blocks v3.3.6 - MC 1.7.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Railcraft{9.6.0.0} [Railcraft] (Railcraft_1.7.10-9.6.0.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TwilightForest{2.3.5} [The Twilight Forest] (twilightforest-1.7.10-2.3.5.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ForgeMultipart{1.1.2.331} [Forge Multipart] (ForgeMultipart-1.7.10-1.1.2.331-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	chisel{2.3.10.37} [Chisel 2] (Chisel2-2.3.10.37.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Ztones{1.7.10} [Ztones] (Ztones-1.7.10-2.2.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	chiseltones{@VERSION@} [Chisel Tones] (ChiselTones-1.7.10-1.0-1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Mekanism{8.1.1} [Mekanism] (Mekanism-1.7.10-8.1.1.TPPIEdition.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	EnderIO{1.7.10-2.3.0.375_beta} [Ender IO] (EnderIO-1.7.10-2.3.0.375_beta.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	EnderStorage{1.4.7.33} [EnderStorage] (EnderStorage-1.7.10-1.4.7.33-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	RedLogic{59.1.9} [RedLogic] (redlogic-59.1.9.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenComputers{1.5.9.594-dev} [OpenComputers] (OpenComputers-MC1.7.10-1.5.9.594-dev-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	computronics{1.4.6} [Computronics] (Computronics-1.7.10-1.4.6.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	cookiecore{1.3.1} [Cookie Core] (CookieCore-1.7.10-1.3.1-7.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ttCore{MC1.7.10-0.1.1-76} [ttCore] (ttCore-MC1.7.10-0.1.1-76.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	customthings{MC1.7.10-0.0.2-27} [CustomThings] (CustomThings-MC1.7.10-0.0.2-27.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	DamageIndicatorsMod{3.2.3} [Damage Indicators] (DamageIndicatorsMod-3.2.3.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	DimensionalAnchors{59.0.2} [Dimensional Anchors] (Dimensional-anchor-59.0.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	eirairc{2.8.TPPI} [EiraIRC] (eirairc-mc1.7.10-2.8.TPPI.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Eln{46} [Electrical Age] (ElectricalAge_BETA-1.9_r46.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	extracells{2.2.68} [ExtraCells] (ExtraCells-1.7.10-2.2.69bNIGHTLY.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TConstruct{1.7.10-1.8.4.build941} [Tinkers' Construct] (TConstruct-1.7.10-1.8.4.build941.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ExtraTiC{1.4.1} [ExtraTiC] (ExtraTiC-1.7.10-1.4.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ExtraUtilities{1.2.4b} [Extra Utilities] (extrautilities-1.2.4b.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	FlatSigns{2.1.0.19} [Flat Signs] (FlatSigns-1.7.10-universal-2.1.0.19.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Steamcraft{0.28.7} [Flaxbeard's Steam Power] (Flaxbeard'sSteamPower-1.7.10-0.28.7.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	JABBA{1.2.1} [JABBA] (Jabba-1.2.1a_1.7.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	libsandstone{1.0.0} [libsandstone] (LibSandstone-1.0.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	xreliquary{1.2} [Reliquary] (Reliquary-1.2.257.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	StevesFactoryManager{A93} [Steve's Factory Manager] (StevesFactoryManagerA93.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TPPITweaks{1.1.0} [TPPI Tweaks] (TPPI-Tweaks-MC1.7.10-1.2.0-117.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThaumicTinkerer{unspecified} [Thaumic Tinkerer] (ThaumicTinkerer-2.5-1.7.10-489.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ForbiddenMagic{1.7.10-0.562} [Forbidden Magic] (Forbidden Magic-1.7.10-0.562.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	GraviSuite{1.7.10-2.0.3} [Graviation Suite] (GraviSuite-1.7.10-2.0.3.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	guideapi{1.7.10-1.0-13} [Guide-API] (Guide-API-1.7.10-1.0-13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	HardcoreEnderExpansion{1.8} [Hardcore Ender Expansion] (HardcoreEnderExpansion  MC-1.7.10  v1.8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	iChunUtil{4.2.2} [iChunUtil] (iChunUtil-4.2.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Hats{4.0.1} [Hats] (Hats-4.0.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	IC2NuclearControl{2.2.1a-Yolo} [Nuclear Control 2] (IC2NuclearControl-2.2.1a-Yolo.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	insane_IlluminatedBows{1.7.1f} [Illuminated Bows] (IlluminatedBows-1.7.10-1.7.1f.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	InfernalMobs{1.6.0} [Infernal Mobs] (InfernalMobs-1.7.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	inpure|core{1.7.10R1.0.0B9} [INpureCore] (INpureCore-[1.7.10]1.0.0B9-54.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	inventorytweaks{1.59-dev-156-af3bc68} [Inventory Tweaks] (InventoryTweaks-1.59-dev-156.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	IronChest{6.0.62.742} [Iron Chest] (ironchest-1.7.10-6.0.62.742-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	kitchenCraftFoods{0.0.1} [KitchenCraft - Foods] (KitchenCraft-MC1.7.10-0.0.1-57-combo.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	kitchenCraftMachines{0.0.1} [KitchenCraft - Machines] (KitchenCraft-MC1.7.10-0.0.1-57-combo.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	LogisticsPipes{0.8.3.118} [Logistics Pipes] (logisticspipes-0.8.3.118.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MagicBees{1.7.10-2.2.3} [Magic Bees] (magicbees-1.7.10-2.2.3.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	malisiscore{1.7.10-0.11.4} [MalisisCore] (malisiscore-1.7.10-0.11.4.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	malisisdoors{1.7.10-1.6} [Malisis' Doors] (malisisdoors-1.7.10-1.6.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MekanismGenerators{8.1.1} [MekanismGenerators] (MekanismGenerators-1.7.10-8.1.1.225.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatAppliedEnergistics{1.7.10R2.8.0} [MFR Compat: Applied Energistics] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatAtum{1.7.10R2.8.0} [MFR Compat: Atum] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatBackTools{1.7.10R2.8.0} [MFR Compat: BackTools] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatBuildCraft{1.7.10R2.8.0} [MFR Compat: BuildCraft] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatChococraft{1.7.10R2.8.0} [MFR Compat: Chococraft] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatExtraBiomes{1.7.10R2.8.0} [MFR Compat: ExtraBiomes] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatForestry{1.7.10R2.8.0} [MFR Compat: Forestry] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatForgeMicroblock{1.7.10R2.8.0} [MFR Compat: ForgeMicroblock] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatIC2{1.7.10R2.8.0} [MFR Compat: IC2] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Mystcraft{0.11.5.00} [Mystcraft] (mystcraft-1.7.10-0.11.5.00.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatMystcraft{1.7.10R2.8.0} [MFR Compat: Mystcraft] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatProjRed{1.7.10R2.8.0} [MFR Compat ProjectRed] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatRailcraft{1.7.10R2.8.0} [MFR Compat: Railcraft] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatSufficientBiomes{1.7.10R2.8.0} [MFR Compat: Sufficient Biomes] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatThermalExpansion{1.7.10R2.8.0} [MFR Compat: Thermal Expansion] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatTConstruct{1.7.10R2.8.0} [MFR Compat: Tinkers' Construct] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatTwilightForest{1.7.10R2.8.0} [MFR Compat: TwilightForest] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineFactoryReloaded|CompatVanilla{1.7.10R2.8.0} [MFR Compat: Vanilla] (MineFactoryReloaded-[1.7.10]2.8.0-104.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	MineTweaker3{3.0.9B} [MineTweaker 3] (MineTweaker3-1.7.10-3.0.9C.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	testdummy{1.0} [MmmMmmMmmMmm] (MmmMmmMmmMmm-1.6.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	modpackTweaks{1.2.0} [ModpackTweaks] (ModpackTweaks-MC1.7.10-1.2.0-24.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	modtweaker2{0.8} [Mod Tweaker 2] (ModTweaker 2-0.8.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ModularArmour{1.0.0} [Modular Armour] (ModularArmour-1.7.10-1.0.4-27.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	morechisels{@VERSION@} [More Chisels] (MoreChisels-1.7.10-1.0-20.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Morph{0.9.1} [Morph] (Morph-Beta-0.9.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NEIAddons{1.12.6.18} [NEI Addons] (neiaddons-mc1710-1.12.6.18.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NEIAddons|Botany{1.12.6.18} [NEI Addons: Botany] (neiaddons-mc1710-1.12.6.18.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NEIAddons|Forestry{1.12.6.18} [NEI Addons: Forestry] (neiaddons-mc1710-1.12.6.18.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NEIAddons|CraftingTables{1.12.6.18} [NEI Addons: Crafting Tables] (neiaddons-mc1710-1.12.6.18.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NEIAddons|ExNihilo{1.12.6.18} [NEI Addons: Ex Nihilo] (neiaddons-mc1710-1.12.6.18.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	neiintegration{1.0.9} [NEI Integration] (NEIIntegration-MC1.7.10-1.0.9.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NetherOres{1.7.10R2.3.0} [Nether Ores] (NetherOres-[1.7.10]2.3.0-12.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NotEnoughCodecs{0.3} [NotEnoughCodecs] (NotEnoughCodecs-1.7.10-0.3-snapshot-13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenMods{0.7.1} [OpenMods] (OpenModsLib-1.7.10-0.7.1-snapshot-342.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenBlocks{1.4.1} [OpenBlocks] (OpenBlocks-1.7.10-1.4.1-snapshot-601.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	RandomThings{2.2.4} [Random Things] (RandomThings-2.2.4.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	recipetweakingcore{1.1.0} [Recipe Tweaking Core] (RecipeTweakingCore-MC1.7.10-1.1.0-8.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	RedstoneArsenal{1.7.10R1.1.0} [Redstone Arsenal] (RedstoneArsenal-[1.7.10]1.1.0-80.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	RArm{1.7.10-1.2.0-30} [Redstone Armory] (RedstoneArmory-1.7.10-1.2.0-30.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	RefinedRelocation{1.0.8a} [Refined Relocation] (RefinedRelocation-1.7.10-1.0.8a.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Sanguimancy{1.7.10-1.1.9-26} [Sanguimancy] (Sanguimancy-1.7.10-1.1.9-26.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ServerTools{1.7.10-2.2.0.79} [ServerTools] (ServerTools-CORE-1.7.10-2.2.0.79.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ServerTools-BACKUP{1.7.10-2.2.1.24} [ServerTools Backup] (ServerTools-BACKUP-1.7.10-2.2.1.24.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	StevesCarts{2.0.0.b18} [Steve's Carts 2] (StevesCarts2.0.0.b18.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	StorageDrawers{1.7.10-1.3.9} [Storage Drawers] (StorageDrawers-1.7.10-1.3.9.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	superMassiveTech{MC1.7.10-0.3.0-alpha-110} [Super Massive Tech] (SuperMassiveTech-MC1.7.10-0.3.0-alpha-110.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	thaumcraftneiplugin{1.7.10-1.7} [Thaumcraft NEI Plugin] (thaumcraftneiplugin-1.7.10-1.7.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	thaumicenergistics{0.8.9.3a-rv2} [Thaumic Energistics] (thaumicenergistics-0.8.9.3a-rv2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThaumicExploration{0.6.0} [Thaumic Exploration] (ThaumicExploration-1.7.10-1.1-37.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThermalDynamics{1.7.10R1.0.0} [Thermal Dynamics] (ThermalDynamics-[1.7.10]1.0.0-122.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TSteelworks{1.7.10-1.1.0} [Tinkers' Steelworks] (TSteelworks-1.7.10-1.1.0-13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TiCTooltips{1.2.4} [TiC Tooltips] (TiCTooltips-mc1.7.10-1.2.4.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TMechworks{0.2.14.100} [Tinkers' Mechworks] (TMechworks-1.7.10-0.2.14.100.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Translocator{1.1.1.14} [Translocator] (Translocator-1.7.10-1.1.1.14-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	wailaplugins{MC1.7.10-0.0.1-14} [WAILA Plugins] (WAILAPlugins-MC1.7.10-0.0.1-14.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	wawla{1.2.1} [What Are We Looking At] (Wawla-1.2.1_1.7.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	witchery{0.24.1} [Witchery] (witchery-1.7.10-0.24.1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	WR-CBE|Core{1.4.1.9} [WR-CBE Core] (WR-CBE-1.7.10-1.4.1.9-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	WR-CBE|Addons{1.4.1.9} [WR-CBE Addons] (WR-CBE-1.7.10-1.4.1.9-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	WR-CBE|Logic{1.4.1.9} [WR-CBE Logic] (WR-CBE-1.7.10-1.4.1.9-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	XaeroMinimap{1.4.1.3} [Xaero's Minimap] (xaeros_minimap_v1.4.1.3_1.7.10_Forge.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	McMultipart{1.1.2.331} [Minecraft Multipart Plugin] (ForgeMultipart-1.7.10-1.1.2.331-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	aobd{2.5.0} [Another One Bites The Dust] (AOBD-2.5.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	denseores{1.0} [Dense Ores] (denseores-1.6.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ForgeMicroblock{1.1.2.331} [Forge Microblocks] (ForgeMultipart-1.7.10-1.1.2.331-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	OpenModsLib class transformers: [stencil_patches:FINISHED],[movement_callback:FINISHED],[map_gen_fix:FINISHED],[gl_capabilities_hook:FINISHED],[player_render_hook:FINISHED]
+	AE2 Version: beta rv2-beta-28 for Forge 10.13.2.1291
+	CoFHCore: -[1.7.10]3.0.2-262
+	MineFactoryReloaded: -[1.7.10]2.8.0-104
+	ThermalFoundation: -[1.7.10]1.0.0-81
+	ThermalExpansion: -[1.7.10]4.0.1-182
+	Mantle Environment: Environment healthy.
+	TConstruct Environment: Environment healthy.
+	ModularArmour: Lacking version information.
+	NetherOres: -[1.7.10]2.3.0-12
+	RedstoneArsenal: -[1.7.10]1.1.0-80
+	ThermalDynamics: -[1.7.10]1.0.0-122
+	Stencil buffer state: Function set: GL30, pool: forge, bits: 8
+	AE2 Integration: IC2:ON, RotaryCraft:OFF, RC:ON, BC:ON, MJ6:OFF, MJ5:OFF, RF:ON, RFItem:ON, MFR:ON, DSU:ON, FZ:OFF, FMP:ON, RB:OFF, CLApi:OFF, Waila:ON, InvTweaks:ON, NEI:ON, CraftGuide:OFF, Mekanism:ON, ImmibisMicroblocks:OFF, BetterStorage:OFF
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: AMD Radeon HD 7800 Series GL version 4.2.12217 Compatibility Profile Context 12.104.0.0, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
